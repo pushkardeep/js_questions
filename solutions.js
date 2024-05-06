@@ -146,23 +146,41 @@ arr3.forEach((elem, i) => {
 
 // console.log(pairedArr);
 
-
 //  ## question number 11
 
 const arr4 = [1, 2, 3, "4", 7, "8", 10];
 
 let sum = 0;
 
-arr4.forEach((elem)=>{
-if(typeof elem === "number"){
-  sum = sum + elem;
-}
-})
+arr4.forEach((elem) => {
+  if (typeof elem === "number") {
+    sum = sum + elem;
+  }
+});
 
 // console.log(sum);
 
-
 // ## question number 12
 
+const obj2 = {
+  name: "Pushkardeep",
+  age: 18,
+  interests: "Coding",
+};
 
+const obj3 = {
+  name: "SomeOne",
+  age: "Dont Know",
+  interests: "who knows",
+};
 
+function getItem() {
+  console.log(this);
+}
+
+// use of call 
+getItem.call(obj2);
+
+// use of bind 
+const storedFunc = getItem.bind(obj3);
+storedFunc();
