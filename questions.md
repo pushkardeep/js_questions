@@ -23,4 +23,20 @@
 11. Make a sum of all array element sif they are number  // solved
 
 12. try to access something from an array or object from with this
-and use call, apply, bind
+and use call, apply, bind   // solved
+
+13. Find the Maximum and Minimum in an Array:  // solved
+
+14. Find Common Elements in Two Arrays // solved
+
+15. Find first non repeating element in an array // solved
+
+16. Check that an array A is subset of another array B . // solved
+
+17. Count Object properties . // solved
+
+18. Check if an object is empty // Solved
+
+19. merge two objects.  // Solved
+
+20. Find the Common Keys in Two Objects, // solved

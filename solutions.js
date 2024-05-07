@@ -174,13 +174,150 @@ const obj3 = {
   interests: "who knows",
 };
 
-function getItem() {
-  console.log(this);
+function getItem(val1, val2) {
+  console.log(val1);
+  console.log(val2);
+  console.log(this.name, "from", val1);
 }
 
-// use of call 
-getItem.call(obj2);
+// use of call
 
-// use of bind 
-const storedFunc = getItem.bind(obj3);
-storedFunc();
+// getItem.call(obj2);
+
+// use of bind
+
+// const storedFunc = getItem.bind(obj3);
+// storedFunc();
+
+//  use apply
+
+// getItem.apply(obj3, ["India", "Abohar"]);
+
+//  ## question number 13
+
+const arr5 = [10, 1, 3, 4, 5];
+
+function maxiAndMini(arr) {
+  return [Math.max(...arr), Math.min(...arr)];
+}
+
+// console.log(maxiAndMini(arr5))
+
+//  ## question number 14
+
+const arr6 = [1, 2, 3, 4, 5, 6, 8, 10];
+const arr7 = [5, 6, 2, 4, 7, 8, 9, 10];
+
+const result = arr6.filter((elem) => {
+  return arr7.includes(elem);
+});
+
+// console.log(result);
+
+//  ## question number 15
+
+const repeatingArr = [1, 3, 3, 5, 5, 6, 7, 8, 10, 10];
+const occurances = {};
+const nonRepeatingElements = [];
+
+const firstNonRepeating = (arr, obj) => {
+  arr.forEach((elem) => {
+    occurances.hasOwnProperty(elem)
+      ? occurances[`${elem}`]++
+      : (occurances[`${elem}`] = 1);
+  });
+
+  for (const key in obj) {
+    if (obj[key] === 1) {
+      nonRepeatingElements.push(key);
+    }
+  }
+};
+
+// firstNonRepeating(repeatingArr, occurances);
+// console.log(
+//   "first Non repeating element of array is ",
+//   nonRepeatingElements[0]
+// );
+
+//  ## question number 16
+
+const arrA = [5, 7, 6, 10];
+const arrB = [3, 4, 5, 6, 7, 8];
+
+const isSubset = (arr1, arr2) => {
+  for (const element of arr1) {
+    if (!arr2.includes(element)) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+// console.log(isSubset(arrA, arrB));
+
+//  ## question number 17
+
+const object = {
+  name: "Pushkardeep",
+  age: 18,
+  interests: "coading",
+};
+
+// console.log(Object.keys(object).length);
+
+// ## question number 18
+
+const object2 = {};
+
+function checksEmpty(obj) {
+  return Object.keys(obj).length === 0;
+}
+
+// console.log(checksEmpty(object2));
+
+//  question number 19
+
+// there are two ways to merge an object with other
+
+const oj1 = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
+const oj2 = {
+  c: 5,
+  d: 6,
+};
+
+const mergingFirstWay = (obj1, obj2) => {
+  return Object.assign(obj1, obj2);
+};
+
+const mergingSecondWay = (obj1, obj2) => {
+  return { ...obj1, ...obj2 };
+};
+
+// console.log(mergingFirstWay(oj1, oj2))
+// console.log(mergingSecondWay(oj1, oj2))
+
+//  ## question number 20;
+
+const object3 = {
+  a: 2,
+  b: 3,
+};
+
+const object4 = {
+  d: 2,
+  b: 4,
+};
+
+const checkCommon = (obj1, obj2) => {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+  return keys1.filter((elem) => keys2.includes(elem));
+};
+
+console.log(checkCommon(object3, object4));
